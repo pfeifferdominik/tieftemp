@@ -8,6 +8,7 @@
 \usepackage{float}
 \usepackage{hyperref}
 \usepackage{isotope}
+\usepackage[deletedmarkup=xout]{changes}
 
 \title{VERSUCH 5.4: Tieftemperatur Messung an Suprafluidem Helium }
 
@@ -40,6 +41,45 @@
 \section{Kühlverfahren zum Erreichen tiefer Temperaturen}
 \section{Thermometrie bei tiefen Temperaturen}
 \section{Curie-/Curie-Weiss-Gesetz}
+\subsection{Herleitung des Curie-Gesetztes}
+Für ein Atom mit dem Gesamtdrehmoment $\vec{J}$ im äußeren Feld $\vec{B}$ schreibt sich die potentielle Energie als
+\begin{equation}
+V=\mu_{b} g_{J}\vec{J}\cdot\vec{B}
+\end{equation}
+dabei gilt $\vec{J}\cdot\vec{B} =m_{z}B_{z}$ mit $m_{z}\in\left[-J,J\right]$. Aus der Boltzmann-Statistik erhält man die Zustandssumme der J+1 möglichen Energiezustände als
+\begin{equation}
+Z=\sum_{m_{J}=-J}^{J} e^{-m_{z}\cdot\frac{\mu_{b}g_{J}B_{z}}{k_{B}T}}=\sum_{m_{J}=-J}^{J} e^{-m_{z}\cdot\frac{\xi}{J}}\,mit\, \xi = \frac{\mu_{b}g_{J}B_{z}\cdot J}{k_{B}T}.
+\end{equation}
+Daraus folgt die Darstellung der Zustandssumme über die Hyperbelfunktion sinh zu
+\begin{equation}
+Z=\frac{\sinh\left(\frac{2J+1}{2J}\cdot\xi\right)}{\sinh\left(\frac{\xi}{2J}\right)}.
+\end{equation}
+Mit der freien Energie $F=U-TS=-Nk_{B}T\ln(Z)$ ergibt sich für die Magnetisierung M eines idealen Paramagneten folgender Zusammenhang:
+\begin{equation}
+M=-\frac{1}{V}\frac{\partial F}{\partial B}=-\frac{1}{V}\frac{\partial F}{\partial Z}\frac{\partial Z}{\partial \xi}\frac{\partial \xi}{\partial B}
+\end{equation}
+und mit den partiellen Ableitungen
+\begin{align}
+\frac{\partial F}{\partial Z}=&\frac{-Nk_{B}T}{Z}=-Nk_{B}T\cdot\frac{\sinh\left(\frac{\xi}{2J}\right)}{\sinh\left(\frac{2J+1}{2J}\cdot\xi\right)}\\
+\frac{\partial Z}{\partial \xi}=&\frac{(2J+1)\sinh\left(\frac{\xi}{2J}\right)\cosh\left(\frac{2J+1}{2J}\cdot\xi\right)-\cosh\left(\frac{\xi}{2J}\right)\sinh\left(\frac{2J+1}{2J}\cdot\xi\right)}{2J\cdot\sinh^2\left(\frac{\xi}{2J}\right)}\\
+\frac{\partial \xi}{\partial B}=&\frac{\mu_{b}g_{J}\cdot J}{k_{B}T}
+\end{align}
+folgt damit für M
+\begin{align}
+M=&\frac{1}{V}\cdot\frac{\mu_{b}g_{J}\cdot J}{\deleted{ k_{B}T}}\cdot N \deleted{k_{B}T}\cdot\frac{\deleted{\sinh\left(\frac{\xi}{2J}\right)}}{\sinh\left(\frac{2J+1}{2J}\cdot\xi\right)}\cdot\frac{(2J+1)\sinh\left(\frac{\xi}{2J}\right)\cosh\left(\frac{2J+1}{2J}\cdot\xi\right)-\cosh\left(\frac{\xi}{2J}\right)\sinh\left(\frac{2J+1}{2J}\cdot\xi\right)}{2J\cdot\sinh^{\deleted{2}}\left(\frac{\xi}{2J}\right)}\\
+=&\frac{N\mu_{b}g_{J}\cdot J}{V}\left[\frac{2J+1}{2J}\cdot\coth\left(\frac{2J+1}{2J}\xi\right)-\frac{1}{2J}\cdot\coth\left(\frac{\xi}{2J}\right)\right]
+\end{align}
+wobei der Teil in de eckigen Klammern der Brillouin-Funktion $B_{J}(x)$ entspricht. Verwendet man nun die Reihendarstellung $\coth (x)=\frac{1}{x}+\frac{x}{3}+O(x^3)$ für kleine x, was dem Grenzwert $\lim_{\xi\to0}\xi=\lim_{T\to \infty}\xi (T)$ entspricht, so erhält man aus der obigen Darstellung
+\begin{align}
+M=&\frac{N\mu_{b}g_{J}\cdot \deleted{J}}{V}\cdot\frac{J+1}{\deleted{J}}\frac{\xi}{3}\\
+=&\frac{N\mu_{B}g_{J}}{V}\frac{J+1}{3}\frac{\mu_{B}g_{J}B_{z}J}{k_{B}T}\\
+=&\frac{N\left(\mu_{B}g_{J}\right)^2B_{z}}{3Vk_{B}}\frac{J(J+1)}{T}.
+\end{align}
+Mit der Beziehung $\chi=\mu_{0}\frac{\partial M}{\partial B}$ findet man schließlich
+\begin{equation}
+\chi=\mu_{0}\frac{\partial M}{\partial B}=\underbrace{\frac{\mu_{0}N\left(\mu_{B}g_{J}\right)^2}{3Vk_{B}}J(J+1)}_{\equiv C}\cdot\frac{1}{T}=\frac{C}{T}
+\end{equation}
+das bekannte Curie-Gesetz mit der Curie-Konstanten $C=\frac{\mu_{0}N\left(\mu_{B}g_{J}\right)^2}{3Vk_{B}}J(J+1)$.
 \section{Eigenschaften von \isotope[3]{He} und \isotope[4]{He}}
 \chapter{Versuchsdurchführung und Auswertung}
 •
