@@ -8,3 +8,5 @@
 *.odg
 *.odg#
 *.soc
+!chifit.pdf
+!pT.pdf
