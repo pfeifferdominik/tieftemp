@@ -10,6 +10,7 @@
 \usepackage{isotope}
 \usepackage[deletedmarkup=xout]{changes}
 \usepackage{cancel}
+\usepackage{gensymb}
 
 \title{VERSUCH 5.4: Tieftemperatur Messung an Suprafluidem Helium }
 
@@ -39,15 +40,29 @@
 \chapter{Ziel des Versuchs}
 •
 \chapter{Physikalische Grundlagen}
+Im folgenden sollen die physikalischen Grundlagen des Versuchs erläutert werden.
 \section{Kühlverfahren zum Erreichen tiefer Temperaturen}
-\subsection{Verflüssigung}
-\subsection{Verdampfungskühlung}
-\subsection{Adiabatische Entmagnetisierung}
-\subsection{\isotope[3]{He}-\isotope[4]{He} Entmischungskühlung}
+Um tiefe Temperaturen - wie in diesem Versuch von wenigen Kelvin - zu erreichen müssen oft mehrere Kühlverfahren angewendet werden. In unserem Versuch wird mit der Verdampfungskühlung (\ref{subsubsec:Verd}) gearbeitet.
+\subsubsection{Verflüssigung}
+Zur Kühlung der meisten Gase kann der Joule-Thompson Effekt verwendet werden. Ab der Inversionstemperatur kühlen reale Gase bei einer Druckminderung ab. Bei den meisten Gasen liegt diese über Raumtemperatur, nicht jedoch bei Helium, sodass dieses vorgekühlt werden muss.
+\subsubsection{Verdampfungskühlung}\label{subsubsec:Verd}
+Bei der Verdampfung wird der Flüssigkeit Wärme entzogen. Pumpt man die verdampften Moleküle ab, so liegt der Gasdruck unter dem Dampfdruck und um wieder ein Gleichgewicht herzustellen verdampft mehr Flüssigkeit. Dadurch sinkt die Temperatur entlang der Dampfdruckkurve. Mit dieser Methode erreicht man Temperaturen bis 1 K.
+\subsubsection{Adiabatische Entmagnetisierung}
+Die Spins der Elektronen oder der Kerne werden in einem Magnetfeld ausgerichtet. Dadurch sinkt die Entropie und die Wärme wird an ein Wärmebad abgegeben. Fährt man nun das Magnetfeld langsam herunter, so bleibt die Entropie erhalten und die Temperatur sinkt. Hiermit können Temperaturen im Milli- und im Falle der Kernspinentmagnetisierung sogar Mikrokelvinbereich erreicht werden.
+\subsubsection{\isotope[3]{He}-\isotope[4]{He} Entmischungskühlung}
+Ab 0,86 K tritt eine Entmischung der Heliumisotope auf. Dabei entsteht eine suprafluide \isotope[4]{He}-Phase und eine \isotope[3]{He}-Phase. Da sich das \isotope[3]{He} reibungslos im \isotope[4]{He} bewegen kann gleicht das Gleichgewicht einer Verdampfung und es kann mit dem selben Prinzip wie bei der Verdampfungskühlung gearbeitet werden.
 \section{Thermometrie bei tiefen Temperaturen}
-\subsection{Primär}
-\subsection{Sekundär}
-\section{Curie-/Curie-Weiss-Gesetz}
+Bei der Messung von Temperaturen benutzt man ein Gerät dessen Sensor im Gleichgewicht mit dem zu Messenden ist. Dabei können primäre oder Sekundäre Thermometer verwendet werden.
+\subsection{Primäre Thermometer}
+Bei primären Thermometern ist der Zusammenhang zwischen Messgröße und Temperatur so gut bekannt, dass direkt auf die Temperatur geschlossen werden kann. So ist etwa der Siedepunkt von Wasser bei Normaldruck 100 \degree C, oder die Dampfdruckkurve von \isotope[4]{He} zwischen 0,65 K und 5 K genau bekannt. Will man jedoch größere Temperaturbereiche messen, so benutzt man sekundäre Thermometer.
+\subsection{Sekundäre Thermometer}
+Bei sekundären Thermometern ist der Zusammenhang zwischen Messgröße und nicht so genau bekannt wie bei primären, sie können jedoch an diesen geeicht werden. Beispiele dafür sind etwa die Ausdehnung von Quecksilber an alten Thermometern oder die Suszeptibilität, die über das Curie-Gesetz (\ref{sec:curie}) $ {\chi=C/T} $ (\ref{eq:curie}) mit der Temperatur verknüpft ist.
+\section{Curie-/Curie-Weiss-Gesetz}\label{sec:curie}
+Das Curie-Gesetz (\ref{eq:curie}) beschreibt den Zusammenhang der Suszeptibilität mit der Temperatur für einen idealen Paramagneten mit Wechselwirkungsfreien magnetischen Momenten. Berücksichtigt man die Wechselwirkung der magnetischen Momente so kommt man auf das Curie-Weiss-Gesetz:
+\begin{align}\label{eq:weiss}
+\chi=\frac{C}{T-\theta}
+\end{align}
+mit der Curie-Konstanten $C$ und der Curie-Temperatur $\theta$.
 \subsection{Herleitung des Curie-Gesetztes}
 Für ein Atom mit dem Gesamtdrehmoment $\vec{J}$ im äußeren Feld $\vec{B}$ schreibt sich die potentielle Energie als
 \begin{equation}
@@ -83,18 +98,37 @@ M=&\frac{N\mu_{b}g_{J}\cdot \cancel{J}}{V}\cdot\frac{J+1}{\cancel{J}}\frac{\xi}{
 =&\frac{N\left(\mu_{B}g_{J}\right)^2B_{z}}{3Vk_{B}}\frac{J(J+1)}{T}.
 \end{align}
 Mit der Beziehung $\chi=\mu_{0}\frac{\partial M}{\partial B}$ findet man schließlich
-\begin{equation}
+\begin{equation}\label{eq:curie}
 \chi=\mu_{0}\frac{\partial M}{\partial B}=\underbrace{\frac{\mu_{0}N\left(\mu_{B}g_{J}\right)^2}{3Vk_{B}}J(J+1)}_{\equiv C}\cdot\frac{1}{T}=\frac{C}{T}
 \end{equation}
 das bekannte Curie-Gesetz mit der Curie-Konstanten $C=\frac{\mu_{0}N\left(\mu_{B}g_{J}\right)^2}{3Vk_{B}}J(J+1)$.
 \section{Eigenschaften von \isotope[3]{He} und \isotope[4]{He}}
+Helium-4 wird unterhalb von 2,1768 K suprafluid. Dies bedeutet, dass es eine verschwindende Viskosität aufweist. Misst man die Wärmekapazität so erkennt man, dass diese bei einer bestimmten Temperatur, der $ \lambda $-Temperatur $ T_\lambda $, sehr hohe Werte annimmt. Unterhalb von $T_\lambda$ ist die Flüssigkeit suprafluid. Dieser makroskopische Quanteneffekt kann anschaulich so erklärt werden, dass sich ab dem $ \lambda $-Punkt die \isotope[4]{He} Atome im Grundzustand befinden und sich die Wellenfunktionen ähnlich einem Bose-Einstein-Kondensat überlagern. Dies erklärt auch warum bei \isotope[3]{He} der $\lambda$-Übergang wesentlich tiefer liegt. Denn \isotope[3]{He} sind Fermionen und können daher nicht wie die \isotope[4]{He} Bosonen in den selben Grundzustand kondensieren. Erst ab sehr viel geringeren Temperaturen bilden sie Paare ähnlich den Cooper-Paaren und es kommt auch hier zum $\lambda$-Übergang. 
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline 
+ & \isotope[3]{He} & \isotope[4]{He} \\  
+\hline 
+Siedetemperatur $ T_c $ & 3,19 K & 4,21 K \\
+\hline 
+$\lambda$-Temperatur $T_{\lambda}$& 0,0025 K & 2,1768 K \\
+\hline 
+Schmelzdruck bei 0 K & 34,39 bar & 25,36 bar\\ 
+\hline 
+Spin & $ \frac{1}{2} $ & 0 \\ 
+\hline 
+\end{tabular} 
+\caption{Eigenschaften von \isotope[3]{He} und \isotope[4]{He}.}\label{tab:He}
+\end{table}
+Bei den in Tabelle \ref{tab:He} aufgeführten Eigenschaften fällt auf, dass Helium einen nicht verschwindenden Schmelzdruck besitzt, was dazu führt, dass Helium keinen Tripelpunkt hat.
 \chapter{Versuchsdurchführung und Auswertung}
 •
 \chapter{Fazit}	
 •
 \renewcommand{\bibname}{Literatur}
 \begin{thebibliography}{0}
-\bibitem {refname} •
+\bibitem {anl} Versuchsanleitung: Thermometrie bei tiefen Temperaturen, Stand 29.05.2017
 
 \end{thebibliography}
 \end{document}    
