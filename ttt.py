@@ -44,7 +44,7 @@ errorCW=outputCW.sd_beta
 
 plt.plot(T,CurieWeiss(paramsCW,T),label='Fit Curie-Weiss-Gesetz')
 plt.legend(loc='best')
-plt.savefig('chifit.pdf')
+#plt.savefig('chifit.pdf')
 plt.show()
 
 '''
@@ -92,7 +92,7 @@ plt.plot(l,lin(paramsL2,l),label='Fit p-T oberhalb $\lambda$-Punkt',zorder=10,co
 plt.xlim([1.7,2.3])
 plt.ylim([0,450])
 plt.legend(loc='best')
-plt.savefig('pT.pdf')
+#plt.savefig('pT.pdf')
 plt.show()
 
 print('T_lambda = ',(paramsL2[1]-paramsL[1])/(paramsL[0]-paramsL2[0]), 'Messpunkt 11: ',T2[10])
