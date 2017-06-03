@@ -96,3 +96,6 @@ plt.legend(loc='best')
 plt.show()
 
 print('T_lambda = ',(paramsL2[1]-paramsL[1])/(paramsL[0]-paramsL2[0]), 'Messpunkt 11: ',T2[10])
+
+def deltaT(chi):
+    return np.sqrt(errorCW[2]**2+(errorCW[1]/(chi-paramsCW[0]))**2+(paramsCW[1]*0.01/(chi-paramsCW[0])**2)**2+(paramsCW[1]*errorCW[0]/(chi-paramsCW[0])**2)**2)

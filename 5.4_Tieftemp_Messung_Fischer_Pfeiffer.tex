@@ -156,6 +156,48 @@ T in K & h in cm & $p_{Messung}$ in Torr & $p_{Probe}$ in Torr & $T_{Probe}$ in 
 \end{table} 
 Da bei dem Aufbau die Sichtfenster der beiden Dewar-Gefäße nicht zu 100\% übereinander lagen, konnte die Höhe auf der Skala nicht sehr exakt abgelesen werden und ein Ablesefehler von $\Delta h=0,5?\,\si{cm}$ ist anzunehmen. Deshalb kommt es zur Anomalie, dass die Temperaturdifferenz für $T=2,18\,\si{K}$ geringer ist als die von $T=2,2\,\si{K}$. Dies dürfte laut Dampfdruckkurve nicht der Fall sein. Des Weiteren gilt für Temperaturen deutlich über dem $\lambda$-Punkt, dass die Temperaturdifferenz verschwindend gering gegenüber dem Temperaturwert und deshalb nicht beachtet werden muss, sowie dass unterhalb des $\lambda$-Punkts jegliche Wärme aufgrund der enorm hohen Wärmeleitfähigkeit des superfluiden Heliums sofort abgeführt wird und deshalb keine Differenz in der Temperatur zustande kommt.
 \section{Curie- und Curie-Weiss-Fit}
+Wir überprüfen nun, ob die gemessene Suszeptibilität mit dem Curie- bzw. dem Curie-Weiss-Gesetz übereinstimmt und wollen mit den gemessenen Werten dann unser Thermometer kalibrieren. In Abbildung \ref{fig:CW} ist die gemessene Suszeptibilität über die Temperatur aufgetragen. Wir fitten an die Funktionen
+\begin{align}
+\chi_{\text{C}}&=\chi_0+\frac{C}{T}\\
+\chi_{\text{CW}}&=\chi_0+\frac{C}{T-\theta},
+\end{align}
+da wir das Leersignal berücksichtigen müssen.
+\begin{figure}[H]
+\centering
+   	\begin{minipage}[b]{\textwidth}
+   	\includegraphics[width=\textwidth]{graphics/chifit.pdf}
+   	\caption{Curie- und Curie-Weiss-Fit an die gemessene Suszeptibilität}
+  	\label{fig:CW}
+   	\end{minipage}
+\end{figure}
+Man kann erkennen, dass das Curie-Weiss-Gesetz eine etwas bessere Beschreibung der Daten liefert als das Curie-Gesetz. Daher benutzen wir das Curie-Weiss-Gesetz zur Bestimmung der Temperatur in folgender Form:
+\begin{align}
+\chi_{\text{CW}}(T)=\chi_0+\frac{C}{T-\theta}\sim 0,184+\frac{4,861}{T-0,175}\,[\si{V}]
+\end{align}
+In Tabelle \ref{tab:fits} sind die Ergebnisse der Fits mit den entsprechenden Ungenauigkeiten aufgetragen.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline 
+ & $ \chi_0 $ & $C$ & $\theta$ \\ 
+\hline 
+$ \chi_{\text{C}} $ & $ 0,069\pm 0,008 $ & $5,531\pm 0,028 $& - \\ 
+\hline 
+$ \chi_{\text{CW}} $ & $ 0,184\pm 0,020 $ & $  4,861\pm 0,111$ & $  0,175\pm 0,030$ \\ 
+\hline 
+\end{tabular} 
+\caption{Fehler und Parameter der Fits.}\label{tab:fits}
+\end{table}
+Damit ergibt sich für die Temperatur $T$
+\begin{align}
+T_{\text{CW}}(\chi)=\frac{C}{\chi-\chi_0}+\theta
+\end{align} 
+und für den Fehler
+\begin{align}
+\Delta T_{\text{CW}}(\chi)=\sqrt{\left(\Delta\theta\right)^2+\left(\frac{\Delta C}{\chi-\chi_0}\right)^2+\left(\frac{C\Delta\chi}{(\chi-\chi_0)^2}\right)^2+\left(\frac{C\Delta\chi_0}{(\chi-\chi_0)^2}\right)^2}
+\end{align}
+Damit ist $ \Delta T $ unseres Thermometers im gemessenen Bereich maximal $ \Delta T_{\text{max}}=0,216\,\si{K} $. Hierfür wurde $ \chi\sim 1\pm 0,01\,\si{V} $ angenommen.
 \section{Aufwärmphase}
 Nachdem im ersten Teils des Versuches das Heliumbad durch Abpumpen des verdampften Heliums immer weiter bis auf $T=1,7\,\si{K}$ abgekühlt wurde, sollte eine Messreihe während der Aufwärmphase des Heliums aufgenommen werden. Hierfür wurde die Pumpe angestellt und in einem Zeitraum von $t_{Aufwärm}=75\,\si{min}$ in einem Abstand von $\Delta t=5\,\si{min}$ Wertepaare der gemessenen Probenspannung und des Druckes in Torr aufgenommen.
 \subsection{pT-Diagramm}
