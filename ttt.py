@@ -15,8 +15,8 @@ T=np.loadtxt('Tundp.txt')[:26]
 chi=np.loadtxt('Tundp.txt')[26:52]
 
 plt.errorbar(T,chi,yerr=0.01,xerr=0.04,fmt='x',label='Messwerte')
-plt.xlabel('T in K')
-plt.ylabel('$\chi$ ~ U in V')
+plt.xlabel('T in K', size=15)
+plt.ylabel('$\chi$ ~ U in V', size=15)
 plt.grid(True)
 
 def Curie(beta,T):
@@ -44,7 +44,7 @@ errorCW=outputCW.sd_beta
 
 plt.plot(T,CurieWeiss(paramsCW,T),label='Fit Curie-Weiss-Gesetz')
 plt.legend(loc='best')
-#plt.savefig('chifit.pdf')
+#plt.savefig('graphics/chifit.pdf')
 plt.show()
 
 '''
@@ -57,10 +57,13 @@ chi2=np.loadtxt('Tundp.txt')[68:]
 def CW(chi):
     return paramsCW[1]/(chi-paramsCW[0])+paramsCW[2]
 
+def deltaT(chi):
+    return np.sqrt(errorCW[2]**2+(errorCW[1]/(chi-paramsCW[0]))**2+(paramsCW[1]*0.01/(chi-paramsCW[0])**2)**2+(paramsCW[1]*errorCW[0]/(chi-paramsCW[0])**2)**2)
+
 T2=CW(chi2)
-plt.errorbar(T2,p,yerr=1,xerr=0.04,fmt='x',label='Messwerte')
-plt.xlabel('T in K')
-plt.ylabel('p in Torr')
+plt.errorbar(T2,p,yerr=1,xerr=deltaT(chi2),fmt='x',label='Messwerte')
+plt.xlabel('T in K', size=15)
+plt.ylabel('p in Torr', size=15)
 plt.grid(True)
 
 def lin(beta,T):
@@ -92,10 +95,7 @@ plt.plot(l,lin(paramsL2,l),label='Fit p-T oberhalb $\lambda$-Punkt',zorder=10,co
 plt.xlim([1.7,2.3])
 plt.ylim([0,450])
 plt.legend(loc='best')
-#plt.savefig('pT.pdf')
+#plt.savefig('graphics/pT.pdf')
 plt.show()
 
 print('T_lambda = ',(paramsL2[1]-paramsL[1])/(paramsL[0]-paramsL2[0]), 'Messpunkt 11: ',T2[10])
-
-def deltaT(chi):
-    return np.sqrt(errorCW[2]**2+(errorCW[1]/(chi-paramsCW[0]))**2+(paramsCW[1]*0.01/(chi-paramsCW[0])**2)**2+(paramsCW[1]*errorCW[0]/(chi-paramsCW[0])**2)**2)
