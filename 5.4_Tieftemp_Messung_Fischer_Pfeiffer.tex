@@ -92,12 +92,13 @@ folgt damit für M
 M=&\frac{1}{V}\cdot\frac{\mu_{b}g_{J}\cdot J}{\cancel{ k_{B}T}}\cdot N \cancel{k_{B}T}\cdot\frac{\cancel{\sinh\left(\frac{\xi}{2J}\right)}}{\sinh\left(\frac{2J+1}{2J}\cdot\xi\right)}\cdot\frac{(2J+1)\sinh\left(\frac{\xi}{2J}\right)\cosh\left(\frac{2J+1}{2J}\cdot\xi\right)-\cosh\left(\frac{\xi}{2J}\right)\sinh\left(\frac{2J+1}{2J}\cdot\xi\right)}{2J\cdot\sinh^{\cancel{2}}\left(\frac{\xi}{2J}\right)}\\
 =&\frac{N\mu_{b}g_{J}\cdot J}{V}\left[\frac{2J+1}{2J}\cdot\coth\left(\frac{2J+1}{2J}\xi\right)-\frac{1}{2J}\cdot\coth\left(\frac{\xi}{2J}\right)\right]
 \end{align}
-wobei der Teil in de eckigen Klammern der Brillouin-Funktion $B_{J}(x)$ entspricht. Verwendet man nun die Reihendarstellung $\coth (x)=\frac{1}{x}+\frac{x}{3}+O(x^3)$ für kleine x, was dem Grenzwert $\lim_{\xi\to0}\xi=\lim_{T\to \infty}\xi (T)$ entspricht, so erhält man aus der obigen Darstellung
+wobei der Teil in de eckigen Klammern der Brillouin-Funktion $B_{J}(x)$ entspricht. Verwendet man nun die Reihendarstellung $\coth (x)=\frac{1}{x}+\frac{x}{3}+O(x^3)$ für kleine x, was dem Grenzwert $\lim_{\xi\to0}\xi=\lim_{B_{z}\to 0}\xi (B_{z})$ entspricht, so erhält man aus der obigen Darstellung
 \begin{align}
 M=&\frac{N\mu_{b}g_{J}\cdot \cancel{J}}{V}\cdot\frac{J+1}{\cancel{J}}\frac{\xi}{3}\\
 =&\frac{N\mu_{B}g_{J}}{V}\frac{J+1}{3}\frac{\mu_{B}g_{J}B_{z}J}{k_{B}T}\\
 =&\frac{N\left(\mu_{B}g_{J}\right)^2B_{z}}{3Vk_{B}}\frac{J(J+1)}{T}.
 \end{align}
+Die Grenzwertbildung ist gerechtfertigt, wenn das Verhältnis von magnetischer Energie zu thermischer Energie klein ist, wofür nur kleine Magnetfelder verwendet werden können. 
 Mit der Beziehung $\chi=\mu_{0}\frac{\partial M}{\partial B}$ findet man schließlich
 \begin{equation}\label{eq:curie}
 \chi=\mu_{0}\frac{\partial M}{\partial B}=\underbrace{\frac{\mu_{0}N\left(\mu_{B}g_{J}\right)^2}{3Vk_{B}}J(J+1)}_{\equiv C}\cdot\frac{1}{T}=\frac{C}{T}
@@ -128,14 +129,14 @@ Im folgenden Abschnitt sind sowohl die Durchführung, als auch dessen Auswertung
 \section{Heliumsäule}
 Da der Ort der Probe im Dewar-Gefäß bei $h_{Probe}=0\,\si{cm}$ angesehen werden kann, der Druck jedoch über der Oberfläche der Heliumsäule gemessen wird, ergibt sich eine Druck und damit eine Temperaturdifferenz zwischen dem Ort der Probe und Ort der Durckmessung. Für den Druck am Probenort gilt:
 \begin{equation}
-p_{Probe}=p_{Messung}+p_{Helium}=p_{Messung}+\rho_{He,fluid}\cdot h \cdot g
+p_{Probe}=p_{Messung}+p_{Probe}=p_{Messung}+\rho_{He,fluid}\cdot h \cdot g
 \end{equation}
 mit der Dichte für Flüssiges Helium $\rho_{He,fluid}=0,145\,\si{\frac{g}{cm^3}}$. In \ref{ptkorr} sind die Werte des Drucks und der Temperatur sowie deren Differenz zwischen Probenort und Messort aufgelistet.
 \begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline 
-T in K & h in cm & $p_{Messung}$ in Torr & $p_{Probe}$ in Torr & $T_{Probe}$ in K & $\Delta$ p in Torr & $\Delta$ T in K\\ 
+T in K & h in cm & $p_{Messung}$ in Torr & $p_{Probe}$ in Torr & $T_{Probe}$ in K & $\Delta$p in Torr & $\Delta$T in K\\ 
 \hline 
 4,2 & 44 & 744 & 748,98 & 4,2066 & 4,69 & 0,0066 \\ 
 \hline 
@@ -218,7 +219,7 @@ m_{o.\lambda}&=8269,48\pm 782,23 \,\si{\frac{Torr}{K}}\\
 b_{o.\lambda}&=-17842,11\pm 1709,67\,\si{Torr}
 \end{align}
 Aus diesen Werten ergibt sich über $T_{\lambda}=\frac{b_{u.\lambda}-b_{o.\lambda}}{m_{o.\lambda}-m_{u.\lambda}}$ die Temperatur des $\lambda$-Punkts zu\\ $T_{\lambda}=2,1618\pm 0,293\,\si{K}$.\\
-Im pT-Diagramm macht sich der $\lambda$-Punkt an der Knickstelle bzw. der Schnittstelle der beiden Fitfunktionen bemerkbar. Dies liegt daran, dass Helium am $\lambda$-Punkt eine quasi unendlich hohe Wärmekapazität aufweist, darüber jedoch deutlich geringere Werte annimmt. Der hier bestimmte Temperaturwert  weicht um $0,015\,\si{K}$ nach unten vom in der Anleitung angegebenen Literaturwert $T_{\lambda}=2,1768\,\si{K}$ ab. Betrachtet man den Fehler der Temperatureichung von 
+Im pT-Diagramm macht sich der $\lambda$-Punkt an der Knickstelle bzw. der Schnittstelle der beiden Fitfunktionen bemerkbar. Dies liegt daran, dass Helium am $\lambda$-Punkt eine quasi unendlich hohe Wärmekapazität aufweist, darüber jedoch deutlich geringere Werte annimmt. Der hier bestimmte Temperaturwert  weicht um $0,015\,\si{K}$ nach unten vom in der Anleitung angegebenen Literaturwert $T_{\lambda}=2,1768\,\si{K}$ ab. Betrachtet man den Fehler der Temperatureichung von $\Delta T=\pm 0,216\,\si{K}$, so liegt der Literaturwert deutlich in der $\sigma$-Umgebung um den errechneten Wert. Die relative Abweichung des errechneten Wertes vom Literaturwert beträgt $\Delta_{rel}=\frac{\Delta T_{\lambda}}{T_{\lambda ,Lit.}}\approx 0,68\%.$ Die Eichung der Temperatur entlang der Helium-Dampfdruckkurve sowie der Curie-Weiss-Fit an die Daten war also hinreichend exakt, um den $\lambda$-Punkt von Helium zu bestimmen.
 \subsection{Wärmemenge}
 Die während der Aufwärmphase im Heluim deponierte Wärme ist 
 \begin{align}
