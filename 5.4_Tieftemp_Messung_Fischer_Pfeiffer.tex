@@ -11,6 +11,7 @@
 \usepackage[deletedmarkup=xout]{changes}
 \usepackage{cancel}
 \usepackage{gensymb}
+\usepackage{siunitx}
 
 \title{VERSUCH 5.4: Tieftemperatur Messung an Suprafluidem Helium }
 
@@ -123,7 +124,40 @@ Spin & $ \frac{1}{2} $ & 0 \\
 \end{table}
 Bei den in Tabelle \ref{tab:He} aufgeführten Eigenschaften fällt auf, dass Helium einen nicht verschwindenden Schmelzdruck besitzt, was dazu führt, dass Helium keinen Tripelpunkt hat.
 \chapter{Versuchsdurchführung und Auswertung}
-•
+Im folgenden Abschnitt sind sowohl die Durchführung, als auch dessen Auswertung des Versuches dargestellt.
+\section{Heliumsäule}
+Da der Ort der Probe im Dewar-Gefäß bei $h_{Probe}=0\,\si{cm}$ angesehen werden kann, der Druck jedoch über der Oberfläche der Heliumsäule gemessen wird, ergibt sich eine Druck und damit eine Temperaturdifferenz zwischen dem Ort der Probe und Ort der Durckmessung. Für den Druck am Probenort gilt:
+\begin{equation}
+p_{Probe}=p_{Messung}+p_{Helium}=p_{Messung}+\rho_{He,fluid}\cdot h \cdot g
+\end{equation}
+mit der Dichte für Flüssiges Helium $\rho_{He,fluid}=0,145\,\si{\frac{g}{cm^3}}$. In (ref einfügen) sind die Werte des Drucks und der Temperatur sowie deren Differenz zwischen Probenort und Messort aufgelistet.
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline 
+T in K & h in cm & $p_{Messung}$ in Torr & $p_{Probe}$ in Torr & $T_{Probe}$ in K & $\Delta$ p & $\Delta$ T\\ 
+\hline 
+4,2 & 44 & 744 & 748,98 & • & 4,69 & • \\ 
+\hline 
+3,4 & 36 & 312 & 315,87 & • & 3,84 & • \\ 
+\hline 
+2,9 & 33 & 155 & 158,26 & • & 3,52 & • \\ 
+\hline 
+2,2 & 29,5 & 50 & 43,16 & • & 3,15 & • \\ 
+\hline 
+2,18 & 28,5 & 38 & 41,04 & • & 3,04 & • \\ 
+\hline 
+2,1 & 27,5 & 31 & 33,99 & • & 2,93 & • \\ 
+\hline 
+1,7 & 25,4 & 8,5 & 11,17 & • & 2,71 & • \\ 
+\hline 
+\end{tabular}
+\caption{Eigenschaften von \isotope[3]{He} und \isotope[4]{He}.}\label{tab:He}
+\end{table} 
+\section{Curie- und Curie-Weiss-Fit}
+\section{Aufwärmphase}
+\subsection{pT-Diagramm}
+\subsection{Wärmemenge}
 \chapter{Fazit}	
 •
 \renewcommand{\bibname}{Literatur}
