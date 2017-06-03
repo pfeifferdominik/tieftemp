@@ -130,31 +130,31 @@ Da der Ort der Probe im Dewar-Gefäß bei $h_{Probe}=0\,\si{cm}$ angesehen werde
 \begin{equation}
 p_{Probe}=p_{Messung}+p_{Helium}=p_{Messung}+\rho_{He,fluid}\cdot h \cdot g
 \end{equation}
-mit der Dichte für Flüssiges Helium $\rho_{He,fluid}=0,145\,\si{\frac{g}{cm^3}}$. In (ref einfügen) sind die Werte des Drucks und der Temperatur sowie deren Differenz zwischen Probenort und Messort aufgelistet.
+mit der Dichte für Flüssiges Helium $\rho_{He,fluid}=0,145\,\si{\frac{g}{cm^3}}$. In \ref{ptkorr} sind die Werte des Drucks und der Temperatur sowie deren Differenz zwischen Probenort und Messort aufgelistet.
 \begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline 
-T in K & h in cm & $p_{Messung}$ in Torr & $p_{Probe}$ in Torr & $T_{Probe}$ in K & $\Delta$ p & $\Delta$ T\\ 
+T in K & h in cm & $p_{Messung}$ in Torr & $p_{Probe}$ in Torr & $T_{Probe}$ in K & $\Delta$ p in Torr & $\Delta$ T in K\\ 
 \hline 
-4,2 & 44 & 744 & 748,98 & • & 4,69 & • \\ 
+4,2 & 44 & 744 & 748,98 & 4,2066 & 4,69 & 0,0066 \\ 
 \hline 
-3,4 & 36 & 312 & 315,87 & • & 3,84 & • \\ 
+3,4 & 36 & 312 & 315,87 & 3,4098 & 3,84 & 0,0098 \\ 
 \hline 
-2,9 & 33 & 155 & 158,26 & • & 3,52 & • \\ 
+2,9 & 33 & 155 & 158,26 & 2,9145 & 3,52 & 0,0145 \\ 
 \hline 
-2,2 & 29,5 & 50 & 43,16 & • & 3,15 & • \\ 
+2,2 & 29,5 & 50 & 43,16 & 2,2317 & 3,15 & 0,0317 \\ 
 \hline 
-2,18 & 28,5 & 38 & 41,04 & • & 3,04 & • \\ 
+2,18 & 28,5 & 38 & 41,04 & 2,2104 & 3,04 & 0,0304 \\ 
 \hline 
-2,1 & 27,5 & 31 & 33,99 & • & 2,93 & • \\ 
+2,1 & 27,5 & 31 & 33,99 & 2,1344 & 2,93 & 0,0344 \\ 
 \hline 
-1,7 & 25,4 & 8,5 & 11,17 & • & 2,71 & • \\ 
+1,7 & 25,4 & 8,5 & 11,17 & 1,7735 & 2,71 & 0,0735 \\ 
 \hline 
 \end{tabular}
-\caption{Eigenschaften von \isotope[3]{He} und \isotope[4]{He}.}\label{tab:He}
+\caption{Werte des gemessenen und des korrigierten Druckes und der Temperatur}\label{ptkorr}
 \end{table} 
-
+Da bei dem Aufbau die Sichtfenster der beiden Dewar-Gefäße nicht zu 100\% übereinander lagen, konnte die Höhe auf der Skala nicht sehr exakt abgelesen werden und ein Ablesefehler von $\Delta h=0,5?\,\si{cm}$ ist anzunehmen. Deshalb kommt es zur Anomalie, dass die Temperaturdifferenz für $T=2,18\,\si{K}$ geringer ist als die von $T=2,2\,\si{K}$. Dies dürfte laut Dampfdruckkurve nicht der Fall sein. Des Weiteren gilt für Temperaturen deutlich über dem $\lambda$-Punkt, dass die Temperaturdifferenz verschwindend gering gegenüber dem Temperaturwert und deshalb nicht beachtet werden muss, sowie dass unterhalb des $\lambda$-Punkts jegliche Wärme aufgrund der enorm hohen Wärmeleitfähigkeit des superfluiden Heliums sofort abgeführt wird und deshalb keine Differenz in der Temperatur zustande kommt.
 \section{Curie- und Curie-Weiss-Fit}
 Wir überprüfen nun, ob die gemessene Suszeptibilität mit dem Curie- bzw. dem Curie-Weiss-Gesetz übereinstimmt und wollen mit den gemessenen Werten dann unser Thermometer kalibrieren. In Abbildung \ref{fig:CW} ist die gemessene Suszeptibilität über die Temperatur aufgetragen. Wir fitten an die Funktionen
 \begin{align}
@@ -199,7 +199,26 @@ und für den Fehler
 \end{align}
 Damit ist $ \Delta T $ unseres Thermometers im gemessenen Bereich maximal $ \Delta T_{\text{max}}=0,216\,\si{K} $. Hierfür wurde $ \chi\sim 1\pm 0,01\,\si{V} $ angenommen.
 \section{Aufwärmphase}
+Nachdem im ersten Teils des Versuches das Heliumbad durch Abpumpen des verdampften Heliums immer weiter bis auf $T=1,7\,\si{K}$ abgekühlt wurde, sollte eine Messreihe während der Aufwärmphase des Heliums aufgenommen werden. Hierfür wurde die Pumpe angestellt und in einem Zeitraum von $t_{Aufwärm}=75\,\si{min}$ in einem Abstand von $\Delta t=5\,\si{min}$ Wertepaare der gemessenen Probenspannung und des Druckes in Torr aufgenommen.
 \subsection{pT-Diagramm}
+Die aufgenommenen Werte der Probenspannung wurden über die Temperatureichung in Temperaturen umgerechnet das sich so ergebende pT-Diagramm in \ref{pTdia} aufgetragen. Anschließend wurden an die Werte zwei lineare Fits angefertigt.
+\begin{figure}[H]
+\centering
+   	\begin{minipage}[b]{1.0\textwidth}
+   	\includegraphics[width=\textwidth]{graphics/pT.pdf}
+  	\label{pTdia}
+   	\end{minipage}
+\caption{pT-Diagramm während der Aufwärmphase mit Ausgleichsgeraden}	
+\end{figure}
+Für die Fitfunktionen wurden folgende Werte ermittelt:
+\begin{align}
+m_{u.\lambda}&=66,00\pm 1,54 \,\si{\frac{Torr}{K}}\\
+b_{u.\lambda}&=-107,28\pm 2,16\,\si{Torr}\\
+m_{o.\lambda}&=8256,47\pm 1,54 \,\si{\frac{Torr}{K}}\\
+b_{o.\lambda}&=-17813,76\pm 2,16\,\si{Torr}
+\end{align}
+Aus diesen Werten ergibt sich über $T_{\lambda}=\frac{b_{u.\lambda}-b_{o.\lambda}}{m_{o.\lambda}-m_{u.\lambda}}$ die Temperatur des $\lambda$-Punkts zu\\ $T_{\lambda}=2,1618\pm 0,0007\,\si{K}$.\\
+Im pT-Diagramm macht sich der $\lambda$-Punkt an der Knickstelle bzw. der Schnittstelle der beiden Fitfunktionen bemerkbar. Dies liegt daran, dass Helium am $\lambda$-Punkt eine quasi unendlich hohe Wärmekapazität aufweist, darüber jedoch deutlich geringere Werte annimmt. Der hier bestimmte Temperaturwert  weicht um $0,015\,\si{K}$ nach unten vom in der Anleitung angegebenen Literaturwert $T_{\lambda}=2,1768\,\si{K}$ ab. Betrachtet man den Fehler der Temperatureichung von 
 \subsection{Wärmemenge}
 \chapter{Fazit}	
 •
