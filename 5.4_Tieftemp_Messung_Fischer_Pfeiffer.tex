@@ -20,7 +20,7 @@
  Name & Dominik Pfeiffer   &   Jonas Fischer\\
  Matrikelnummer & 2913632  & 2240758 \\
  E-mail& \textaccent{dominik@diepfeiffers.de} & \textaccent{jonas.fischer.42@gmail.com}\\
- \\Versuchsbetreuung & • \\
+ \\Versuchsbetreuung & Niels Müller \\
  Durchführung& 29.05.2017 \\
  Abgabetermin& 19.06.2017
  \end{tabular}}
@@ -213,18 +213,43 @@ Die aufgenommenen Werte der Probenspannung wurden über die Temperatureichung in
 \end{figure}
 Für die Fitfunktionen wurden folgende Werte ermittelt:
 \begin{align}
-m_{u.\lambda}&=65,55\pm 2,39 \,\si{\frac{Torr}{K}}\\
-b_{u.\lambda}&=-106,39\pm 4,66\,\si{Torr}\\
+m_{u.\lambda}&=61,99\pm 2,67 \,\si{\frac{Torr}{K}}\\
+b_{u.\lambda}&=-99,23\pm 5,14\,\si{Torr}\\
 m_{o.\lambda}&=8269,48\pm 782,23 \,\si{\frac{Torr}{K}}\\
 b_{o.\lambda}&=-17842,11\pm 1709,67\,\si{Torr}
 \end{align}
-Aus diesen Werten ergibt sich über $T_{\lambda}=\frac{b_{u.\lambda}-b_{o.\lambda}}{m_{o.\lambda}-m_{u.\lambda}}$ die Temperatur des $\lambda$-Punkts zu\\ $T_{\lambda}=2,1619\pm 0,293\,\si{K}$.\\
-Im pT-Diagramm macht sich der $\lambda$-Punkt an der Knickstelle bzw. der Schnittstelle der beiden Fitfunktionen bemerkbar. Dies liegt daran, dass Helium am $\lambda$-Punkt eine quasi unendlich hohe Wärmekapazität aufweist, darüber jedoch deutlich geringere Werte annimmt. Der hier bestimmte Temperaturwert  weicht um $0,0149\,\si{K}$ nach unten vom in der Anleitung angegebenen Literaturwert $T_{\lambda}=2,1768\,\si{K}$ ab. Betrachtet man den Fehler der Temperatureichung von $\Delta T=\pm 0,216\,\si{K}$, so liegt der Literaturwert deutlich in der $\sigma$-Umgebung um den errechneten Wert.Die relative Abweichung des errechneten Wertes vom Literaturwert beträgt $\Delta_{rel}=\frac{\Delta T_{\lambda}}{T_{\lambda ,Lit.}}\approx 0,68\%.$ Die Eichung der Temperatur entlang der Helium-Dampfdruckkurve sowie der Curie-Weiss-Fit an die Daten war also hinreichend exakt, um den $\lambda$-Punkt von Helium zu bestimmen.
+Aus diesen Werten ergibt sich über $T_{\lambda}=\frac{b_{u.\lambda}-b_{o.\lambda}}{m_{o.\lambda}-m_{u.\lambda}}$ die Temperatur des $\lambda$-Punkts zu\\ $T_{\lambda}=2,1618\pm 0,293\,\si{K}$.\\
+Im pT-Diagramm macht sich der $\lambda$-Punkt an der Knickstelle bzw. der Schnittstelle der beiden Fitfunktionen bemerkbar. Dies liegt daran, dass Helium am $\lambda$-Punkt eine quasi unendlich hohe Wärmekapazität aufweist, darüber jedoch deutlich geringere Werte annimmt. Der hier bestimmte Temperaturwert  weicht um $0,015\,\si{K}$ nach unten vom in der Anleitung angegebenen Literaturwert $T_{\lambda}=2,1768\,\si{K}$ ab. Betrachtet man den Fehler der Temperatureichung von $\Delta T=\pm 0,216\,\si{K}$, so liegt der Literaturwert deutlich in der $\sigma$-Umgebung um den errechneten Wert. Die relative Abweichung des errechneten Wertes vom Literaturwert beträgt $\Delta_{rel}=\frac{\Delta T_{\lambda}}{T_{\lambda ,Lit.}}\approx 0,68\%.$ Die Eichung der Temperatur entlang der Helium-Dampfdruckkurve sowie der Curie-Weiss-Fit an die Daten war also hinreichend exakt, um den $\lambda$-Punkt von Helium zu bestimmen.
+\subsection{Wärmemenge}
+Die während der Aufwärmphase im Heluim deponierte Wärme ist 
+\begin{align}
+\mathrm{d}Q_w&=m\cdot c(T)\,\mathrm{d}T\\
+\Rightarrow Q_w&=\int_{T_0}^{T_1}m\cdot c(T)\,\mathrm{d}T
+\end{align}
+Da wir den Verlauf von $ c(T) $ allerdings nicht kennen müssen wir das Integral nähern. Wir benutzen dazu die Sehnentrapezregel, außerdem nähern wir, dass die Masse des flüssigen Heliums konstant bleibt. Damit ergibt sich die deponierte Wärme zu
+\begin{align}
+Q_w=m\sum_{i=1}^{n-1}\dfrac{c(T_{i+1})+c(T_{i})}{2}\cdot(T_{i+1}-T_i)
+\end{align}
+mit den Werten zu $ c(T_{i}) $ aus \cite{Sciver}. Die Masse $m$ des Heliums ist mit der mittleren Höhe $\bar{h}=25,325\,\si{cm}$
+\begin{align}
+m_{\mathrm{fl}}=\rho_{\mathrm{He}}\bar{h}\pi r^2=184,58\,\si{g}.
+\end{align}
+Damit ist die während der Aufwärmphase im Heluim deponierte Wärme $ Q_w=428,23\,\si{J} $.\\
+Die in die Verdampfung des Heliums umgesetzte Wärme ist 
+\begin{align}
+\Delta Q_{V}=N\cdot\Delta Q_{V,\si{mol}}=\frac{m_g}{m_{\si{mol}}}\cdot\Delta Q_{V,\si{mol}}.
+\end{align}
+Hier ist $ m_g=\rho_{\mathrm{He}}\Delta h\pi r^2$ mit $ \Delta h=0,15\,\si{cm} $ die Masse des verdampften Heliums. Dadurch resultiert die Verdampfungswärme $ Q_{V}=25,4\,\si{J} $. \\
+Der Wärmestrom während des Aufwärmens ist dann
+\begin{align}
+I=\dot{Q}=\frac{Q_V+Q_w}{\Delta t}=\frac{453,6\,\si{J}}{4680\,\si{s}}=96,93\,\si{\frac{mJ}{s}}.
+\end{align}
 \chapter{Fazit}	
 •
 \renewcommand{\bibname}{Literatur}
 \begin{thebibliography}{0}
 \bibitem {anl} Versuchsanleitung: Thermometrie bei tiefen Temperaturen, Stand 29.05.2017
+\bibitem {Sciver} S. W. Van Sciver: Helium Cryogenics, 2nd edition, 2012
 
 \end{thebibliography}
 \end{document}    

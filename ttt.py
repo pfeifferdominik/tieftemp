@@ -51,8 +51,8 @@ plt.show()
 aufwärmen
 '''
 
-p=np.loadtxt('Tundp.txt')[52:68]
-chi2=np.loadtxt('Tundp.txt')[68:]
+p=np.loadtxt('Tundp.txt')[52:69]
+chi2=np.loadtxt('Tundp.txt')[69:]
 
 def CW(chi):
     return paramsCW[1]/(chi-paramsCW[0])+paramsCW[2]
@@ -70,7 +70,7 @@ plt.grid(True)
 def lin(beta,T):
     return beta[0]*T+beta[1]
     
-d=10 #denn Punkt 11 liegt in beiden fits über dem lambda-Punkt
+d=11 #denn Punkt 12 liegt in beiden fits über dem lambda-Punkt
     
 data = RealData(T2[:d],p[:d],dT[:d],1)
 model = Model(lin)
@@ -99,8 +99,19 @@ plt.legend(loc='best')
 #plt.savefig('graphics/pT.pdf')
 plt.show()
 
-print('T_lambda = ',(paramsL2[1]-paramsL[1])/(paramsL[0]-paramsL2[0]), 'Messpunkt 11: ',T2[10])
+print('T_lambda = ',(paramsL2[1]-paramsL[1])/(paramsL[0]-paramsL2[0]), 'Messpunkt 12: ',T2[11])
 
 DTl=np.sqrt((errorL2[1]/(paramsL[0]-paramsL2[0]))**2+(errorL[1]/(paramsL[0]-paramsL2[0]))**2+((paramsL2[1]-paramsL[1])*errorL[0]/(paramsL[0]-paramsL2[0])**2)**2+((paramsL2[1]-paramsL[1])*errorL2[0]/(paramsL[0]-paramsL2[0])**2)**2)
 
 print('Delta T_lambda = ',DTl)
+
+Tc=([1.7,1.77,1.81,1.85,1.90,1.95,2  ,2.03,2.06,2.1,2.18,2.20,2.21])
+c =([2.4,2.9 ,3.2 ,3.5 ,4.1 ,4.6 ,5.4,6   ,6.7 ,8.4,3.2 ,3.1 ,3])
+
+m=0.145*25.325*np.pi*4*4
+x=0
+for i in range(len(Tc)-1):
+    x+=(c[i+1]+c[i])/2*(Tc[i+1]-Tc[i])
+    
+Qt=m*x
+Qv=0.145*0.15*np.pi*4*4/4.0026*93
