@@ -61,7 +61,8 @@ def deltaT(chi):
     return np.sqrt(errorCW[2]**2+(errorCW[1]/(chi-paramsCW[0]))**2+(paramsCW[1]*0.01/(chi-paramsCW[0])**2)**2+(paramsCW[1]*errorCW[0]/(chi-paramsCW[0])**2)**2)
 
 T2=CW(chi2)
-plt.errorbar(T2,p,yerr=1,xerr=deltaT(chi2),fmt='x',label='Messwerte')
+dT=deltaT(chi2)
+plt.errorbar(T2,p,yerr=1,xerr=dT,fmt='x',label='Messwerte')
 plt.xlabel('T in K', size=15)
 plt.ylabel('p in Torr', size=15)
 plt.grid(True)
@@ -71,9 +72,9 @@ def lin(beta,T):
     
 d=10 #denn Punkt 11 liegt in beiden fits über dem lambda-Punkt
     
-data = RealData(T2[:d],p[:d],0.04,1)
+data = RealData(T2[:d],p[:d],dT[:d],1)
 model = Model(lin)
-odr = ODR(data, model, beta0=[67.8,-110])
+odr = ODR(data, model, beta0=[65.8,-110])
 #odr.set_job(fit_type=2)
 outputL = odr.run()
 paramsL=outputL.beta
@@ -83,9 +84,9 @@ l=np.linspace(1.71,2.25)
 
 plt.plot(l,lin(paramsL,l),label='Fit p-T unterhalb $\lambda$-Punkt',zorder=10,color='r')
 
-data = RealData(T2[d:],p[d:],0.04,1)
+data = RealData(T2[d:],p[d:],dT[d:],1)
 model = Model(lin)
-odr = ODR(data, model, beta0=[8183,-17652])
+odr = ODR(data, model, beta0=[8269,-17842])
 #odr.set_job(fit_type=2)
 outputL2 = odr.run()
 paramsL2=outputL2.beta
@@ -99,3 +100,7 @@ plt.legend(loc='best')
 plt.show()
 
 print('T_lambda = ',(paramsL2[1]-paramsL[1])/(paramsL[0]-paramsL2[0]), 'Messpunkt 11: ',T2[10])
+
+DTl=np.sqrt((errorL2[1]/(paramsL[0]-paramsL2[0]))**2+(errorL[1]/(paramsL[0]-paramsL2[0]))**2+((paramsL2[1]-paramsL[1])*errorL[0]/(paramsL[0]-paramsL2[0])**2)**2+((paramsL2[1]-paramsL[1])*errorL2[0]/(paramsL[0]-paramsL2[0])**2)**2)
+
+print('Delta T_lambda = ',DTl)
