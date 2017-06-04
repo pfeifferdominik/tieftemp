@@ -39,7 +39,7 @@
 \tableofcontents
 
 \chapter{Ziel des Versuchs}
-•
+Ziel dieses Versuches ist es zunächst eine Paramagnetische Probe mittels einer Messreihe entlang der Dampfdruckkurve des superfluiden Heliums als sekundäres Thermometer zu eichen und das Curie-/Curie-Weiss-Gesetz zu überprüfen. Danach soll während des Aufwärmungsprozesses des mittels Verdampfungskühlung auf unter $2\,\si{K}$ abgekühlten Heliums eine weitere Messreihe zur Untersuchung des $\lambda$-Punktes aufgenommen werden. Dieser wird aus den als pT-Diagramm aufgetragenen Messwerten der Aufwärmung bestimmt. Letztendlich soll noch die in der Aufwärmphase im Helium deponierte Wärmeenergie bestimmt und mit der theoretischen Wärmestrahlung verglichen werden.
 \chapter{Physikalische Grundlagen}
 Im folgenden sollen die physikalischen Grundlagen des Versuchs erläutert werden.
 \section{Kühlverfahren zum Erreichen tiefer Temperaturen}
@@ -200,7 +200,7 @@ und für den Fehler
 \end{align}
 Damit ist $ \Delta T $ unseres Thermometers im gemessenen Bereich maximal $ \Delta T_{\text{max}}=0,216\,\si{K} $. Hierfür wurde $ \chi\sim 1\pm 0,01\,\si{V} $ angenommen.
 \section{Aufwärmphase}
-Nachdem im ersten Teils des Versuches das Heliumbad durch Abpumpen des verdampften Heliums immer weiter bis auf $T=1,7\,\si{K}$ abgekühlt wurde, sollte eine Messreihe während der Aufwärmphase des Heliums aufgenommen werden. Hierfür wurde die Pumpe angestellt und in einem Zeitraum von $t_{Aufwärm}=75\,\si{min}$ in einem Abstand von $\Delta t=5\,\si{min}$ Wertepaare der gemessenen Probenspannung und des Druckes in Torr aufgenommen.
+Nachdem im ersten Teils des Versuches das Heliumbad durch Abpumpen des verdampften Heliums immer weiter bis auf $T=1,7\,\si{K}$ abgekühlt wurde, sollte eine Messreihe während der Aufwärmphase des Heliums aufgenommen werden. Hierfür wurde die Pumpe angestellt und in einem Zeitraum von $t_{Aufw"arm}=78\,\si{min}$ in einem Abstand von $\Delta t=5\,\si{min}$ Wertepaare der gemessenen Probenspannung und des Druckes in Torr aufgenommen.
 \subsection{pT-Diagramm}
 Die aufgenommenen Werte der Probenspannung wurden über die Temperatureichung in Temperaturen umgerechnet das sich so ergebende pT-Diagramm in \ref{pTdia} aufgetragen. Anschließend wurden an die Werte zwei lineare Fits angefertigt.
 \begin{figure}[H]
@@ -244,12 +244,29 @@ Der Wärmestrom während des Aufwärmens ist dann
 \begin{align}
 I=\dot{Q}=\frac{Q_V+Q_w}{\Delta t}=\frac{453,6\,\si{J}}{4680\,\si{s}}=96,93\,\si{\frac{mJ}{s}}.
 \end{align}
+Dabei entspricht $Q_V+Q_w$ der kompletten dem Helium zugeführten Wärme von $Q=453,6\,\si{J}$.\\
+Nun soll diese mit der durch Wärmestrahlung aufgenommen Wärmemenge verglichen werden. Nach dem Stefan-Boltzmann-Gesetz gilt $Q\sim T^4$. Aufgrund dieses Zusammenhangs der Wärmestrahlung mit der Temperatur ist die vom Helium bei $T\approx 4,2\,\si{K}$ abgestrahlte Wärmeenergie gegenüber der aufgenommenen zu vernachlässigen. Die aufgenommene Strahlung entspricht in sehr guter Näherung der bei $T\approx 77\,\si{K}$ vom flüssigen Stickstoff abgestrahlten Wärme. Diese Berechnen wir über das oben genannte Gesetz für einen Schwarzkörperstrahler:
+\begin{equation}
+Q=P\cdot\Delta t=\varepsilon\sigma A T^4\cdot\Delta t
+\end{equation}
+wobei wir annehmen $\varepsilon=1$ und $T=77\,\si{K}$. $\sigma$ ist die Stefan-Boltzmann-Konstante und die Oberfläche A setzt sich aus der Mantelfläche sowie dem Boden der Heliumsäule zusammen. Den Deckel vernachlässigen wir, da sich oberhalb des flüssigen Heliums ebendieses als Gas mit einer quasi gleichen Temperatur befindet. Mit
+\begin{align}
+A_{Mantel}&=\bar{h}\cdot 2\pi r=2\pi 25,325\,\si{cm}\cdot 4\,\si{cm}=636,5\,\si{cm^2}\\
+A_{Boden}&=\pi\cdot r^2=50,3\,\si{cm^2}
+\end{align}
+ergibt sich $A_{G}=686,8\,\si{cm^2}$. Damit errechnet sich die maximale, durch äußere Strahlung aufgenommene Wärmeenergie mit $\Delta t=4680\,\si{s}$  zu
+\begin{equation}
+Q_{max.}=640,7\,\si{J}.
+\end{equation}
+Erkennbar ist, dass die theoretisch aus dem Stickstoff mittels Wärmestrahlung an das Helium überführte Wärmeenergie die berechnete aufgenommene Wärmeenergie übersteigt. Dies liegt vor allem am Aufbau selbst. Das Dewar-Gefäß des Heliums ist bis auf die beiden Sichtschlitze verspiegelt, wie man es von herkömmlichen Thermoskannen kennt. Dies verhindert die Aufnahme/Abgabe von Energie über Wärmestrahlung zu einem gewissen Teil.
 \chapter{Fazit}	
-•
+Während es Versuches würde erfolgreich zunächst flüssiges Helium bei $T_{Helium}=4,2\,\si{K}$ in einen Badkryostaten eingefüllt, der von in einem Bad aus flüssigem Stickstoff bei $T_{Stickstoff}=77\,\si{K}$ gelagert ist. Durch Abpumpen des gasförmigen Heliums mit einer Pumpe konnte entlang der Dampfdruckkurve des Heliums eine Messreihe der Spannung einer mit einer Paramagnetischen Probe gefüllten, astatischen Spule aufgenommen werden, welche mittels der Dampfdruckkurve und dem Curie- bzw. Curie-Weiss-Gesetz in eine Temperaturskala geeicht werden konnte. Da über einen Curie-Weiss-Fit $\chi_{\text{CW}}(T)=\chi_0+\frac{C}{T-\theta}$ die bessere Übereinstimmung mit den Messwerten gefunden wurde, diente dieser als Temperatureichung $T_{\text{CW}}(\chi)=\frac{C}{\chi-\chi_0}+\theta$ wobei gilt $\chi_0=0,184\pm 0,020$, $C=4,861\pm 0,111$ und $\theta=0,175\pm 0,030$ und genutzt wurde, dass $U\sim\chi$. Es konnte also erfolgreich eine Paramagnetische Probe in einer Spule als sekundäres Thermometer geeicht werden.\\
+Nachdem das Helium auf ca. $T_{min}=1,7\,\si{K}$ abgekühlt wurde, wurde während der $78\,\si{min}$ dauernden Aufwärmphase des Heliums eine weitere Messreihe mit Wertepaaren des Drucks und der Spannung aufgenommen und in einem pT-Diagramm aufgetragen, sowie über zwei lineare Fitfunktionen der $\lambda$-Punkt zu $\Delta T=\pm 0,216\,\si{K}$ mit einer relativen Abweichung zum Literaturwert von nur 0,68\% bestimmt.\\
+Des Weiteren wurde die währende der Aufwärmphase vom Helium aufgenommene Wärmeenergie zu $Q=453,6\,\si{J}$ berechnet und mit der theoretisch durch Wärmestrahlung aufgenommenen Wärmeenergie von $Q_{max.}=640,7\,\si{J}$ verglichen. Dabei wurde bemerkt, dass der theoretischen Wert den tatsächlichen übertrifft, was auf den Aufbau zurückzuführen ist.
 \renewcommand{\bibname}{Literatur}
 \begin{thebibliography}{0}
 \bibitem {anl} Versuchsanleitung: Thermometrie bei tiefen Temperaturen, Stand 29.05.2017
 \bibitem {Sciver} S. W. Van Sciver: Helium Cryogenics, 2nd edition, 2012
-
+\bibitem {herl} Dr. Matthias Opel: Vorlesungsnotizen zum Thema Magnetismus, Walther-Meißner-Institut, Stand 13.05.2015
 \end{thebibliography}
 \end{document}    
