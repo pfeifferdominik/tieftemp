@@ -42,6 +42,7 @@
 Ziel dieses Versuches ist es zunächst eine Paramagnetische Probe mittels einer Messreihe entlang der Dampfdruckkurve des superfluiden Heliums als sekundäres Thermometer zu eichen und das Curie-/Curie-Weiss-Gesetz zu überprüfen. Danach soll während des Aufwärmungsprozesses des mittels Verdampfungskühlung auf unter $2\,\si{K}$ abgekühlten Heliums eine weitere Messreihe zur Untersuchung des $\lambda$-Punktes aufgenommen werden. Dieser wird aus den als pT-Diagramm aufgetragenen Messwerten der Aufwärmung bestimmt. Letztendlich soll noch die in der Aufwärmphase im Helium deponierte Wärmeenergie bestimmt und mit der theoretischen Wärmestrahlung verglichen werden.
 \chapter{Physikalische Grundlagen}
 Im folgenden sollen die physikalischen Grundlagen des Versuchs erläutert werden.
+Dabei beziehen wir uns auf \cite{anl} und \cite{Sciver}.
 \section{Kühlverfahren zum Erreichen tiefer Temperaturen}
 Um tiefe Temperaturen - wie in diesem Versuch von wenigen Kelvin - zu erreichen müssen oft mehrere Kühlverfahren angewendet werden. In unserem Versuch wird mit der Verdampfungskühlung (\ref{subsubsec:Verd}) gearbeitet.
 \subsubsection{Verflüssigung}
@@ -213,13 +214,14 @@ Die aufgenommenen Werte der Probenspannung wurden über die Temperatureichung in
 \end{figure}
 Für die Fitfunktionen wurden folgende Werte ermittelt:
 \begin{align}
-m_{u.\lambda}&=61,99\pm 2,67 \,\si{\frac{Torr}{K}}\\
-b_{u.\lambda}&=-99,23\pm 5,14\,\si{Torr}\\
-m_{o.\lambda}&=8269,48\pm 782,23 \,\si{\frac{Torr}{K}}\\
-b_{o.\lambda}&=-17842,11\pm 1709,67\,\si{Torr}
+m_{u.\lambda}&=61,99\,\si{\frac{Torr}{K}}\\
+b_{u.\lambda}&=-99,23\,\si{Torr}\\
+m_{o.\lambda}&=8269,48\,\si{\frac{Torr}{K}}\\
+b_{o.\lambda}&=-17842,11\,\si{Torr}
 \end{align}
-Aus diesen Werten ergibt sich über $T_{\lambda}=\frac{b_{u.\lambda}-b_{o.\lambda}}{m_{o.\lambda}-m_{u.\lambda}}$ die Temperatur des $\lambda$-Punkts zu $T_{\lambda}=2,1618\pm 0,293\,\si{K}$.\\
-Im pT-Diagramm macht sich der $\lambda$-Punkt an der Knickstelle bzw. der Schnittstelle der beiden Fitfunktionen bemerkbar. Dies liegt daran, dass Helium am $\lambda$-Punkt eine quasi unendlich hohe Wärmekapazität aufweist, darüber jedoch deutlich geringere Werte annimmt. Der hier bestimmte Temperaturwert  weicht um $0,015\,\si{K}$ nach unten vom in der Anleitung angegebenen Literaturwert $T_{\lambda}=2,1768\,\si{K}$ ab. Betrachtet man den Fehler der Temperatureichung von $\Delta T=\pm 0,216\,\si{K}$, so liegt der Literaturwert deutlich in der $\sigma$-Umgebung um den errechneten Wert. Die relative Abweichung des errechneten Wertes vom Literaturwert beträgt $\Delta_{rel}=\frac{\Delta T_{\lambda}}{T_{\lambda ,Lit.}}\approx 0,68\%.$ Die Eichung der Temperatur entlang der Helium-Dampfdruckkurve sowie der Curie-Weiss-Fit an die Daten war also hinreichend exakt, um den $\lambda$-Punkt von Helium zu bestimmen.
+Aus diesen Werten ergibt sich über $T_{\lambda}=\frac{b_{u.\lambda}-b_{o.\lambda}}{m_{o.\lambda}-m_{u.\lambda}}$ die Temperatur des $\lambda$-Punkts zu ${T_{\lambda}=2,1618\pm 0,0574\,\si{K}}$.
+Dabei berechnet sich der Fehler von $T_\lambda$ über den Fehler der Thermometerkalibrierung $\Delta T_\lambda=\Delta T(T_\lambda)$.\\
+Im pT-Diagramm macht sich der $\lambda$-Punkt an der Knickstelle bzw. der Schnittstelle der beiden Fitfunktionen bemerkbar. Dies liegt daran, dass Helium am $\lambda$-Punkt eine quasi unendlich hohe Wärmekapazität aufweist, darüber jedoch deutlich geringere Werte annimmt. Der hier bestimmte Temperaturwert  weicht um $0,015\,\si{K}$ nach unten vom in der Anleitung angegebenen Literaturwert ${T_{\lambda}=2,1768\,\si{K}}$ ab. Betrachtet man den Fehler der Temperatureichung von $\Delta T=\pm 0,216\,\si{K}$, so liegt der Literaturwert deutlich in der $\sigma$-Umgebung um den errechneten Wert. Die relative Abweichung des errechneten Wertes vom Literaturwert beträgt $\Delta_{rel}=\frac{\Delta T_{\lambda}}{T_{\lambda ,Lit.}}\approx 0,68\%.$ Die Eichung der Temperatur entlang der Helium-Dampfdruckkurve sowie der Curie-Weiss-Fit an die Daten war also hinreichend exakt, um den $\lambda$-Punkt von Helium zu bestimmen.
 \subsection{Wärmemenge}
 Die während der Aufwärmphase im Heluim deponierte Wärme ist 
 \begin{align}
@@ -260,7 +262,7 @@ Q_{max.}=640,7\,\si{J}.
 \end{equation}
 Erkennbar ist, dass die theoretisch aus dem Stickstoff mittels Wärmestrahlung an das Helium überführte Wärmeenergie die berechnete aufgenommene Wärmeenergie übersteigt. Dies liegt vor allem am Aufbau selbst. Das Dewar-Gefäß des Heliums ist bis auf die beiden Sichtschlitze verspiegelt, wie man es von herkömmlichen Thermoskannen kennt. Dies verhindert die Aufnahme/Abgabe von Energie über Wärmestrahlung zu einem gewissen Teil.
 \chapter{Fazit}	
-Während es Versuches würde erfolgreich zunächst flüssiges Helium bei $T_{Helium}=4,2\,\si{K}$ in einen Badkryostaten eingefüllt, der von in einem Bad aus flüssigem Stickstoff bei $T_{Stickstoff}=77\,\si{K}$ gelagert ist. Durch Abpumpen des gasförmigen Heliums mit einer Pumpe konnte entlang der Dampfdruckkurve des Heliums eine Messreihe der Spannung einer mit einer Paramagnetischen Probe gefüllten, astatischen Spule aufgenommen werden, welche mittels der Dampfdruckkurve und dem Curie- bzw. Curie-Weiss-Gesetz in eine Temperaturskala geeicht werden konnte. Da über einen Curie-Weiss-Fit $\chi_{\text{CW}}(T)=\chi_0+\frac{C}{T-\theta}$ die bessere Übereinstimmung mit den Messwerten gefunden wurde, diente dieser als Temperatureichung $T_{\text{CW}}(\chi)=\frac{C}{\chi-\chi_0}+\theta$ wobei gilt $\chi_0=0,184\pm 0,020$, $C=4,861\pm 0,111$ und $\theta=0,175\pm 0,030$ und genutzt wurde, dass $U\sim\chi$. Es konnte also erfolgreich eine Paramagnetische Probe in einer Spule als sekundäres Thermometer geeicht werden.\\
+Während es Versuches wurde erfolgreich zunächst flüssiges Helium bei $T_{Helium}=4,2\,\si{K}$ in einen Badkryostaten eingefüllt, der von in einem Bad aus flüssigem Stickstoff bei $T_{Stickstoff}=77\,\si{K}$ gelagert ist. Durch Abpumpen des gasförmigen Heliums mit einer Pumpe konnte entlang der Dampfdruckkurve des Heliums eine Messreihe der Spannung einer mit einer Paramagnetischen Probe gefüllten, astatischen Spule aufgenommen werden, welche mittels der Dampfdruckkurve und dem Curie- bzw. Curie-Weiss-Gesetz in eine Temperaturskala geeicht werden konnte. Da über einen Curie-Weiss-Fit $\chi_{\text{CW}}(T)=\chi_0+\frac{C}{T-\theta}$ die bessere Übereinstimmung mit den Messwerten gefunden wurde, diente dieser als Temperatureichung $T_{\text{CW}}(\chi)=\frac{C}{\chi-\chi_0}+\theta$ wobei gilt $\chi_0=0,184\pm 0,020$, $C=4,861\pm 0,111$ und $\theta=0,175\pm 0,030$ und genutzt wurde, dass $U\sim\chi$. Es konnte also erfolgreich eine Paramagnetische Probe in einer Spule als sekundäres Thermometer geeicht werden.\\
 Nachdem das Helium auf ca. $T_{min}=1,7\,\si{K}$ abgekühlt wurde, wurde während der $78\,\si{min}$ dauernden Aufwärmphase des Heliums eine weitere Messreihe mit Wertepaaren des Drucks und der Spannung aufgenommen und in einem pT-Diagramm aufgetragen, sowie über zwei lineare Fitfunktionen der $\lambda$-Punkt zu $\Delta T=\pm 0,216\,\si{K}$ mit einer relativen Abweichung zum Literaturwert von nur 0,68\% bestimmt.\\
 Des Weiteren wurde die währende der Aufwärmphase vom Helium aufgenommene Wärmeenergie zu $Q=453,6\,\si{J}$ berechnet und mit der theoretisch durch Wärmestrahlung aufgenommenen Wärmeenergie von $Q_{max.}=640,7\,\si{J}$ verglichen. Dabei wurde bemerkt, dass der theoretischen Wert den tatsächlichen übertrifft, was auf den Aufbau zurückzuführen ist.
 \renewcommand{\bibname}{Literatur}
